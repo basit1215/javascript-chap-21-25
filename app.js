@@ -81,9 +81,44 @@ document.write(userInput4 + " is Available at index " + i + " in our bakery..."+
     document.write("We are sorry. " + userInput4 + " is Not available in our bakery..."+ "<br>"+ "<br>");
  }
   
- var university = "University of Karachi"; 
-var uniConvtArr= university.split();
-document.write(uniConvtArr+ "<br>"+ "<br>");
+
+ var alphabet= false;
+ var numbers= false;
+ while(true){ 
+   var userPassword=  prompt("Enter your password");
+   if(userPassword.charAt(0) >= 0 || userPassword.charAt(0)<= 9){
+alert("Password not contain number at start");
+   }
+   else if(userPassword.length < 6){
+alert("Password contain atleast 6 characters")
+   }
+   else{
+      for(i= 0; i<userPassword.length; i++){
+if(userPassword[i] >="a" && userPassword[i]<="z" || userPassword[i] >="A" && userPassword[i]<="Z"){
+alphabet=true;
+break
+}}
+for(i=0; i<userPassword.length; i++){
+if(userPassword[i]>="0" && userPassword[i]<="9"){
+   numbers=true;
+   break
+}
+}
+if(alphabet && numbers){
+   alert("Your password is correct");
+   break;
+}
+else{
+   alert("Password must contain Alphabet or Numbers");
+}
+}
+}
+
+var university = "University of Karachi"; 
+var uniConvtArr= university.split(" ");
+for (var i = 0; i < uniConvtArr.length; i++) {
+   document.write(uniConvtArr[i] + "<br>"+ "<br>");
+}
 
 var userInput5= prompt("Enter something...");
 var lastWord= userInput5.charAt(userInput5.length -1);
